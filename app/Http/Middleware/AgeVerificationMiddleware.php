@@ -7,22 +7,15 @@ use Illuminate\Http\Request;
 
 class AgeVerificationMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
     public function handle(Request $request, Closure $next)
     {
-        // Check if the user's age is over 18
-        if ($request->input('age') < 18) {
-            // Redirect the user or return a response indicating they are not authorized
-            return redirect()->back()->with('error', 'You must be over 18 to access this page.');
+        if ($request->hasCookie('age')) {
+            $age = $request->cookie('age');
+            if ($age >= 18) {
+                return $next($request);
+            }
         }
 
-        // Proceed to the next middleware or the route handler
-        return $next($request);
+        return redirect('verify')->with('message', 'Underage');
     }
 }
