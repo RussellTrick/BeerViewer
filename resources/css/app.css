@@ -1,0 +1,123 @@
+#alert {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: white;
+    padding: 20px;
+    background-color: #f44336;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    transition: visibility 0s, opacity 0.5s linear;
+    font-family: monospace;
+}
+
+.show {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.container {
+    border-radius: 10px;
+    background: linear-gradient(#4c7b8b 40%, #fff 40%);
+    position: relative;
+    padding: 20px;
+    min-width: 400px;
+    min-height: 200px;
+}
+
+.container :nth-child(2) {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    font-size: 40px;
+    color: white;
+}
+.container :nth-child(3) {
+    display: flex;
+    position: absolute;
+    top: 50%;
+}
+
+.container :nth-child(4) {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #496ab6;
+    top: 82%;
+    left: 75%;
+    padding: 5px;
+}
+
+.container :nth-child(4):hover {
+    text-decoration: underline;
+}
+
+.container input[type="date"] {
+    border: none;
+    border-bottom: 3px solid #4c7b8b;
+    border-radius: 10px 10px 0 0;
+    outline: none;
+    min-width: 400px;
+    font-size: 30px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #e4e4e4e8;
+    color: #999;
+}
+
+.container input[type="date"]:focus {
+    color: #000000;
+}
+
+html {
+    background-color: #e8e8e8;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: inherit;
+    font-family: monospace;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.country-container {
+    display: flex;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.country-container p {
+    font-size: 16px;
+}
+
+.country-container h2 {
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+.country-container img {
+    width: 300px;
+    height: auto;
+}
+
+.col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    width: 80%;
+}

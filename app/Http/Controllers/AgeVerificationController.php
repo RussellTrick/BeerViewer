@@ -22,7 +22,7 @@ class AgeVerificationController extends Controller
 
         Cookie::queue('age', $age, 60);
 
-        return redirect('beers');
+        return redirect('countries');
     }
 }
 

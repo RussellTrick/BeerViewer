@@ -13,9 +13,10 @@ class AgeVerificationMiddleware
             $age = $request->cookie('age');
             if ($age >= 18) {
                 return $next($request);
-            }
-        }
-
-        return redirect('verify')->with('message', 'Underage');
+            } else{
+                return redirect('verify')->with('message', 'Underage');}
+        } else{
+            return redirect('verify')->with('message', 'Please set a valid age');
+        }        
     }
 }
