@@ -82,12 +82,14 @@ html {
 }
 
 body {
-    height: inherit;
+    height: 100%;
     font-family: monospace;
+    margin: 0;
 }
 
 main {
     height: 100%;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,6 +115,7 @@ main {
 .country-container img {
     width: 300px;
     height: auto;
+    max-height: 200px;
 }
 
 .col {
